@@ -87,6 +87,17 @@ DB_USER=your_mysql_username
 DB_PASSWORD=your_mysql_password
 DB_NAME=your_mysql_database
 ```
+## or 
+
+```bash
+docker run -p 8080:80 \
+  -e DB_HOST=your_mysql_host \
+  -e DB_USER=your_mysql_username \
+  -e DB_PASSWORD=your_mysql_password \
+  -e DB_NAME=your_mysql_database \
+  your-docker-image
+```
+In Docker, you can use the `-e` or `--env` option to set environment variables when running a container. When you run a container, you can provide environment variables directly on the command line. Here's an example:
 
 Replace `your_mysql_host`, `your_mysql_username`, `your_mysql_password`, and `your_mysql_database` with your actual MySQL credentials.
 
@@ -103,19 +114,4 @@ docker run -p 8080:80 --env-file .env php_mysql_docker
 Visit `http://localhost:8080` in your web browser to see the PHP script in action. The data should be inserted into your MySQL database using the provided environment variables.
 
 
-In Docker, you can use the `-e` or `--env` option to set environment variables when running a container. When you run a container, you can provide environment variables directly on the command line. Here's an example:
 
-```bash
-docker run -p 8080:80 \
-  -e DB_HOST=your_mysql_host \
-  -e DB_USER=your_mysql_username \
-  -e DB_PASSWORD=your_mysql_password \
-  -e DB_NAME=your_mysql_database \
-  your-docker-image
-```
-
-Replace `your_mysql_host`, `your_mysql_username`, `your_mysql_password`, `your_mysql_database`, and `your-docker-image` with your actual MySQL credentials and the name or ID of your Docker image.
-
-This way, you're passing the environment variables directly when running the container. In your PHP code, you can then access these environment variables using `getenv()` or `$_ENV` in your PHP script, just as shown in the previous PHP code example.
-
-For Kubernetes, you typically handle environment variables in a more structured way using ConfigMaps or Secrets, as shown in the Kubernetes YAML example I provided earlier.
