@@ -1,4 +1,4 @@
-Sure, I can help you with that. First, let's create the HTML and PHP files for your website. We'll also create a Dockerfile for building the Docker image.
+
 
 1. Create a folder for your project and navigate into it:
 
