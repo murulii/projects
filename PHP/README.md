@@ -83,18 +83,18 @@ CMD ["apache2-foreground"]
 # .env
 
 DB_HOST=your_mysql_host
-DB_USER=your_mysql_username
-DB_PASSWORD=your_mysql_password
-DB_NAME=your_mysql_database
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=muruli
 ```
 ## or 
 
 ```bash
 docker run -p 8080:80 \
   -e DB_HOST=your_mysql_host \
-  -e DB_USER=your_mysql_username \
-  -e DB_PASSWORD=your_mysql_password \
-  -e DB_NAME=your_mysql_database \
+  -e DB_USER=root \
+  -e DB_PASSWORD=root \
+  -e DB_NAME=muruli \
   your-docker-image
 ```
 In Docker, you can use the `-e` or `--env` option to set environment variables when running a container. When you run a container, you can provide environment variables directly on the command line. Here's an example:
