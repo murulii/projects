@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO $table ($column) VALUES ('$data')";
     if ($conn->query($sql) === TRUE) {
         echo "Data added successfully";
-        header("Location: index.php");
+        
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
