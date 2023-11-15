@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+      - name: php
+        image: murulii/phpproject 
+        ports:
+        - containerPort: 80
+        env:
+        - name: whost
+          value: mysql-primary-headless
+        - name: wuser
+          value: root
+        - name: wpass
+          value: root
+        - name: rhost
+          value: mysql-secondary-headless
+        - name: ruser
+          value: root
+        - name: rpass
+          value: root
