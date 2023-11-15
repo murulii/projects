@@ -1,8 +1,8 @@
 <?php
 // Database connection details
-$host = 'localhost'; // getenv('readhost');
-$username = 'root';
-$password = '';
+$host = getenv('rhost');
+$username = getenv('ruser');
+$password = getenv('rpass');
 $database = 'muruli';
 $table = 'data';
 $column = 'first';
